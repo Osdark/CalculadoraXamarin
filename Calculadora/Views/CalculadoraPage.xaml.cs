@@ -181,7 +181,13 @@ namespace Calculadora.Views
                         i++;
                         break;
                     case "div":
-                        actualNumber = actualNumber / Convert.ToDouble(operationsList[i + 1]);
+                        if (operationsList[i] == "0")
+                        {
+                            return "Error";
+                        } else
+                        {
+                            actualNumber = actualNumber / Convert.ToDouble(operationsList[i + 1]);
+                        }
                         i++;
                         break;
                     case "mult":
